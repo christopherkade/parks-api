@@ -14,10 +14,3 @@ Endpoint | Description
 `/api/wdw-ak` | **COMING SOON** - Returns a list of every attraction in **Walt Disney World, Animal Kingdom**
 `/api/dlr-mk` | **COMING SOON** - Returns a list of every attraction in **Disneyland, Magic Kingdom**
 `/api/dlr-ca` | **COMING SOON** - Returns a list of every attraction in **Disneyland, California Adventure**
-
-
-
-
-
-
-More endpoints to be added in the future.
