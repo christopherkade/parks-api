@@ -28,11 +28,12 @@ app.get('/api/parks', (req, res) => {
   res.status(200).json(parks);
 });
 
+// DISNEYLAND PARIS
 app.get('/api/dlp-mk', (req, res) => {
-  const dlp = new Themeparks.Parks.DisneylandParisMagicKingdom();
+  const mk = new Themeparks.Parks.DisneylandParisMagicKingdom();
   let allRides = [];
 
-  dlp.GetWaitTimes().then(function(rides) {
+  mk.GetWaitTimes().then(function(rides) {
     // Get wait times for Paris rides
     for (let i = 0, ride; ride = rides[i++];) {
       allRides.push(ride);
@@ -44,6 +45,128 @@ app.get('/api/dlp-mk', (req, res) => {
     res.status(500).send(error)
   }));
 });
+
+app.get('/api/dlp-wds', (req, res) => {
+  const wds = new Themeparks.Parks.DisneylandParisWaltDisneyStudios;
+  let allRides = [];
+
+  wds.GetWaitTimes().then(function(rides) {
+    // Get wait times for Paris rides
+    for (let i = 0, ride; ride = rides[i++];) {
+      allRides.push(ride);
+    }
+    if (allRides !== null) {
+      res.status(200).json(allRides);
+    }
+  }, console.error(error => {
+    res.status(500).send(error)
+  }));
+});
+
+// WALT DISNEY WORLD
+app.get('/api/wdw-mk', (req, res) => {
+  const mk = new Themeparks.Parks.WaltDisneyWorldMagicKingdom;
+  let allRides = [];
+
+  mk.GetWaitTimes().then(function(rides) {
+    // Get wait times for Paris rides
+    for (let i = 0, ride; ride = rides[i++];) {
+      allRides.push(ride);
+    }
+    if (allRides !== null) {
+      res.status(200).json(allRides);
+    }
+  }, console.error(error => {
+    res.status(500).send(error)
+  }));
+});
+
+app.get('/api/wdw-epcot', (req, res) => {
+  const epcot = new Themeparks.Parks.WaltDisneyWorldEpcot;
+  let allRides = [];
+
+  epcot.GetWaitTimes().then(function(rides) {
+    // Get wait times for Paris rides
+    for (let i = 0, ride; ride = rides[i++];) {
+      allRides.push(ride);
+    }
+    if (allRides !== null) {
+      res.status(200).json(allRides);
+    }
+  }, console.error(error => {
+    res.status(500).send(error)
+  }));
+});
+
+app.get('/api/wdw-hs', (req, res) => {
+  const hs = new Themeparks.Parks.WaltDisneyWorldHollywoodStudios;
+  let allRides = [];
+
+  hs.GetWaitTimes().then(function(rides) {
+    // Get wait times for Paris rides
+    for (let i = 0, ride; ride = rides[i++];) {
+      allRides.push(ride);
+    }
+    if (allRides !== null) {
+      res.status(200).json(allRides);
+    }
+  }, console.error(error => {
+    res.status(500).send(error)
+  }));
+});
+
+app.get('/api/wdw-ak', (req, res) => {
+  const ak = new Themeparks.Parks.WaltDisneyWorldAnimalKingdom;
+  let allRides = [];
+
+  ak.GetWaitTimes().then(function(rides) {
+    // Get wait times for Paris rides
+    for (let i = 0, ride; ride = rides[i++];) {
+      allRides.push(ride);
+    }
+    if (allRides !== null) {
+      res.status(200).json(allRides);
+    }
+  }, console.error(error => {
+    res.status(500).send(error)
+  }));
+});
+
+// DISNEYLAND RESORT
+app.get('/api/dlr-mk', (req, res) => {
+  const mk = new Themeparks.Parks.DisneylandResortMagicKingdom;
+  let allRides = [];
+
+  mk.GetWaitTimes().then(function(rides) {
+    // Get wait times for Paris rides
+    for (let i = 0, ride; ride = rides[i++];) {
+      allRides.push(ride);
+    }
+    if (allRides !== null) {
+      res.status(200).json(allRides);
+    }
+  }, console.error(error => {
+    res.status(500).send(error)
+  }));
+});
+
+app.get('/api/dlr-ca', (req, res) => {
+  const ca = new Themeparks.Parks.DisneylandResortCaliforniaAdventure;
+  let allRides = [];
+
+  ca.GetWaitTimes().then(function(rides) {
+    // Get wait times for Paris rides
+    for (let i = 0, ride; ride = rides[i++];) {
+      allRides.push(ride);
+    }
+    if (allRides !== null) {
+      res.status(200).json(allRides);
+    }
+  }, console.error(error => {
+    res.status(500).send(error)
+  }));
+});
+
 
 app.listen(port);
 console.log('RESTful API server started on: ' + port);
