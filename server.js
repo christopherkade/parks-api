@@ -28,7 +28,7 @@ app.get('/api/parks', (req, res) => {
   res.status(200).json(parks);
 });
 
-app.get('/api/dlp', (req, res) => {
+app.get('/api/dlp-mk', (req, res) => {
   const dlp = new Themeparks.Parks.DisneylandParisMagicKingdom();
   let allRides = [];
 
