@@ -34,7 +34,6 @@ app.get('/api/dlp-mk', (req, res) => {
   let allRides = [];
 
   mk.GetWaitTimes().then(function(rides) {
-    // Get wait times for Paris rides
     for (let i = 0, ride; ride = rides[i++];) {
       allRides.push(ride);
     }
@@ -51,7 +50,6 @@ app.get('/api/dlp-wds', (req, res) => {
   let allRides = [];
 
   wds.GetWaitTimes().then(function(rides) {
-    // Get wait times for Paris rides
     for (let i = 0, ride; ride = rides[i++];) {
       allRides.push(ride);
     }
@@ -69,7 +67,6 @@ app.get('/api/wdw-mk', (req, res) => {
   let allRides = [];
 
   mk.GetWaitTimes().then(function(rides) {
-    // Get wait times for Paris rides
     for (let i = 0, ride; ride = rides[i++];) {
       allRides.push(ride);
     }
@@ -86,7 +83,6 @@ app.get('/api/wdw-epcot', (req, res) => {
   let allRides = [];
 
   epcot.GetWaitTimes().then(function(rides) {
-    // Get wait times for Paris rides
     for (let i = 0, ride; ride = rides[i++];) {
       allRides.push(ride);
     }
@@ -103,7 +99,6 @@ app.get('/api/wdw-hs', (req, res) => {
   let allRides = [];
 
   hs.GetWaitTimes().then(function(rides) {
-    // Get wait times for Paris rides
     for (let i = 0, ride; ride = rides[i++];) {
       allRides.push(ride);
     }
@@ -120,7 +115,6 @@ app.get('/api/wdw-ak', (req, res) => {
   let allRides = [];
 
   ak.GetWaitTimes().then(function(rides) {
-    // Get wait times for Paris rides
     for (let i = 0, ride; ride = rides[i++];) {
       allRides.push(ride);
     }
@@ -138,7 +132,6 @@ app.get('/api/dlr-mk', (req, res) => {
   let allRides = [];
 
   mk.GetWaitTimes().then(function(rides) {
-    // Get wait times for Paris rides
     for (let i = 0, ride; ride = rides[i++];) {
       allRides.push(ride);
     }
@@ -155,7 +148,6 @@ app.get('/api/dlr-ca', (req, res) => {
   let allRides = [];
 
   ca.GetWaitTimes().then(function(rides) {
-    // Get wait times for Paris rides
     for (let i = 0, ride; ride = rides[i++];) {
       allRides.push(ride);
     }
