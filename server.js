@@ -1,7 +1,6 @@
 const express = require('express'),
   app = express(),
   port = process.env.PORT || 3000,
-  api = require('./api/parksRoutes'),
   bodyParser = require("body-parser"),
   Themeparks = require("themeparks");
 
@@ -29,6 +28,22 @@ app.get('/api/parks', (req, res) => {
   res.status(200).json(parks);
 });
 
+app.get('/api/dlp', (req, res) => {
+  const dlp = new Themeparks.Parks.DisneylandParisMagicKingdom();
+  let allRides = [];
+
+  dlp.GetWaitTimes().then(function(rides) {
+    // Get wait times for Paris rides
+    for (let i = 0, ride; ride = rides[i++];) {
+      allRides.push(ride);
+    }
+    if (allRides !== null) {
+      res.status(200).json(allRides);
+    }
+  }, console.error(error => {
+    res.status(500).send(error)
+  }));
+});
 
 app.listen(port);
 console.log('RESTful API server started on: ' + port);
