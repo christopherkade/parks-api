@@ -5,9 +5,9 @@ const express = require('express'),
   Themeparks = require("themeparks");
 
 app.use(bodyParser.json());
-app.use(function (req, res, next) {
-  res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000'); // TODO: Change that
-  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+app.use(function(req, res, next) {
+  res.setHeader('Access-Control-Allow-Origin', 'https://parksapi.herokuapp.com');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT');
   res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
   res.setHeader('Access-Control-Allow-Credentials', true);
   next();
